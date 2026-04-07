@@ -136,7 +136,7 @@ export const Jobs: React.FC = () => {
 
   return (
     <>
-      <section ref={sectionRef} className="bg-bg text-text-primary w-full h-screen relative z-10 overflow-hidden" id="projects">
+      <section ref={sectionRef} className="bg-bg text-text-primary w-full h-screen relative z-10 overflow-hidden" id="proyectos">
         {/* Contenedor central a 2 columnas fijas */}
         <div className="max-w-[1300px] h-full mx-auto px-6 md:px-10 lg:px-16 flex flex-col md:flex-row items-center relative">
           
@@ -177,8 +177,8 @@ export const Jobs: React.FC = () => {
                      proj.repoUrl ? 'cursor-pointer hover:border-blue-900/50 transition-colors' : ''
                    }`}
                  >
-                   {/* Sutil resplandor o gradiente arriba */}
-                   <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#0C1A2B]/40 to-transparent pointer-events-none" />
+                   {/* Sutil resplandor o linear arriba */}
+                   <div className="absolute top-0 left-0 w-full h-24 bg-linear-to-b from-[#0C1A2B]/40 to-transparent pointer-events-none" />
 
                    <div className="relative z-10 pointer-events-none">
                      <div className="p-3 inline-flex bg-[#0C1A2B] text-white rounded-xl mb-6 shadow-inner">

@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-bg">
+    <section id="inicio" className="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-bg">
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}

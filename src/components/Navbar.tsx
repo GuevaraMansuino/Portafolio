@@ -2,11 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 
-const NAV_LINKS = ["Inicio", "Proyectos", "Curriculum"];
+const NAV_LINKS = ["Inicio", "Proyectos", "Servicios"];
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("Home");
+  const [active, setActive] = useState(NAV_LINKS[0]);
+  const handleNav = (link: string) => {
+    setActive(link);
+    const element = document.getElementById(link.toLowerCase());
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +42,7 @@ export const Navbar: React.FC = () => {
           {NAV_LINKS.map(link => (
             <button
               key={link}
-              onClick={() => setActive(link)}
+              onClick={() => handleNav(link)}
               className={cn(
                 "text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors",
                  active === link 

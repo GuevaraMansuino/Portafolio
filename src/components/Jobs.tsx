@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Subcomponente del Modelo 3D (Cabeza animada)
 const FunkoModel = () => {
-  const { scene, nodes } = useGLTF('/funko.glb');
+  const { scene, nodes } = useGLTF(import.meta.env.BASE_URL + 'funko.glb');
 
   // Ajustes de rotación base: modifica estos valores para que el Funko mire al frente (pruebas con 0.5, -0.5, 1.0, etc.)
   const baseRotationY = 0.5;

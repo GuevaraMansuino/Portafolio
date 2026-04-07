@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# 🚀 Portafolio Interactivo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido al repositorio de mi portafolio personal. Este proyecto es una experiencia web interactiva diseñada para presentar mi perfil profesional, educación, habilidades y proyectos destacados de una forma dinámica e inmersiva.
 
-Currently, two official plugins are available:
+## 🌟 Características Destacadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Animaciones 3D:** Integración con React Three Fiber para mostrar modelos tridimensionales interactivos en entornos inmersivos.
+- **Experiencia de Usuario Fluida:** Animaciones complejas de interfaz y efectos basados en el *scroll*, controlados por **GSAP** y **Framer Motion**.
+- **Diseño Moderno y Responsivo:** Estilizado mediante **Tailwind CSS**, adaptándose perfectamente a cualquier resolución y tipo de pantalla.
+- **Flujo Dinámico:** Navegación por diferentes secciones (Acerca de mí, Educación, Habilidades, Proyectos) con transiciones suaves y elegantes.
 
-## React Compiler
+## 🛠️ Stack Tecnológico
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+El proyecto está desarrollado con las últimas y mejores herramientas del ecosistema Frontend:
 
-## Expanding the ESLint configuration
+- **Core:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Estilos:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animaciones:** [GSAP](https://gsap.com/) & [Framer Motion](https://www.framer.com/motion/)
+- **Experiencia 3D:** [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) & [Drei](https://github.com/pmndrs/drei)
+- **Tooling:** [Vite](https://vitejs.dev/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 💻 Configuración Local
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Si deseas clonar y ejecutar el portafolio en tu entorno local, sigue estos pasos:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clona el repositorio**
+   ```bash
+   git clone https://github.com/GuevaraMansuino/Portafolio.git
+   cd Portafolio
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Instala las dependencias**
+   Asegúrate de tener Node.js instalado.
+   ```bash
+   npm install
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. **Inicia el entorno de desarrollo**
+   ```bash
+   npm run dev
+   ```
+   Abre tu navegador en la url (usualmente `http://localhost:5173`) para ver el proyecto en vivo.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🌐 Despliegue
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Este portafolio utiliza **GitHub Pages** para su alojamiento. Gracias a las GitHub Actions, todo cambio integrado a la rama principal genera automáticamente un nuevo *build* de Vite y se despliega de inmediato.
+
+---
+
+*Hecho con ❤️ equilibrando código, diseño y mucha creatividad.*

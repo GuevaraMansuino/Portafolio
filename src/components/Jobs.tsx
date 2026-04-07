@@ -57,7 +57,7 @@ const PROJECTS = [
     description: 'Automatización de inventario y ERP.',
     tags: ['Automatización', 'ERP', 'Inventario'],
     icon: <Cpu className="w-6 h-6" />,
-    repoUrl: 'https://github.com/GuevaraMansuino'
+    repoUrl: 'https://github.com/GuevaraMansuino/SerElectronica'
   },
   {
     role: 'Tesis Ciberseguridad',
@@ -73,7 +73,7 @@ const PROJECTS = [
     description: 'Backend, Mercado Pago webhooks y pasarela de pago.',
     tags: ['Backend', 'Webhooks', 'Pagos'],
     icon: <ShoppingBag className="w-6 h-6" />,
-    repoUrl: 'https://github.com/GuevaraMansuino'
+    repoUrl: 'https://github.com/HernanRotellini/E-commercePadel'
   },
   {
     role: 'Portfolio Interactivo',

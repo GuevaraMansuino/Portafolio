@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import Hls from 'hls.js';
 import gsap from 'gsap';
 import { Navbar } from './Navbar';
+import { MessageCircle, Mail } from 'lucide-react';
 
 const ROLES = ["Desarrollador Web", "Programador", "Estudiante de UTN", "Creador"];
 
 export const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [roleIndex, setRoleIndex] = useState(0);
+  const [showContact, setShowContact] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -86,16 +88,28 @@ export const Hero: React.FC = () => {
           Estudiante de la Tecnicatura Universitaria en Programación en la UTN Mendoza. Orientado a desarrollar software funcional, escalable y diseñar interfaces modernas.
         </p>
 
-        <div className="blur-in flex flex-col sm:flex-row items-center gap-4">
-          <button className="group relative rounded-full text-sm px-7 py-3.5 hover:scale-105 transition-all bg-text-primary text-bg hover:bg-bg hover:text-text-primary">
+        <div className="blur-in flex flex-col sm:flex-row items-center gap-4 relative">
+          <button className="group relative rounded-full text-sm px-7 py-3.5 hover:scale-105 transition-all bg-text-primary text-bg hover:bg-bg hover:text-text-primary" onClick={() => { const el = document.getElementById('proyectos'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}>
             <span className="absolute inset-[-2px] rounded-full accent-gradient opacity-0 group-hover:opacity-100 transition-opacity" />
             <span className="relative z-10">Ver Proyectos</span>
           </button>
 
-          <button className="group relative rounded-full text-sm px-7 py-3.5 hover:scale-105 transition-all border border-stroke bg-bg text-text-primary hover:border-transparent">
-             <span className="absolute inset-[-2px] rounded-full accent-gradient opacity-0 group-hover:opacity-100 transition-opacity" />
-             <span className="relative z-10 block bg-bg px-7 py-3.5 rounded-full -mx-7 -my-3.5">Contactar...</span>
+          <button className="group relative rounded-full text-sm px-7 py-3.5 hover:scale-105 transition-all border border-stroke bg-bg text-text-primary hover:border-transparent" onClick={() => setShowContact(prev => !prev)}>
+            <span className="absolute inset-[-2px] rounded-full accent-gradient opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="relative z-10 block bg-bg px-7 py-3.5 rounded-full -mx-7 -my-3.5">Contactar...</span>
           </button>
+          {showContact && (
+            <div className="absolute mt-2 w-48 bg-surface border border-stroke rounded-lg shadow-lg p-4 right-0 top-full">
+              <a href="mailto:gguevaraman@gmail.com?subject=Contacto%20desde%20Portafolio" target="_self" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-text-primary hover:text-text-primary/80 transition-colors cursor-pointer">
+                <Mail className="w-4 h-4" />
+                Email
+              </a>
+              <a href="https://wa.me/5492616648128" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-text-primary hover:text-text-primary/80 transition-colors mt-2">
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
+              </a>
+            </div>
+          )}
         </div>
       </div>
 

@@ -45,16 +45,16 @@ const FunkoModel = () => {
 const PROJECTS = [
   {
     role: 'Yam Capital Humano',
-    entity: 'Trabajo Anterior',
-    description: 'Coordinación de reclutamiento y gestión de talento.',
-    tags: ['Reclutamiento', 'Gestión', 'Talento'],
+    entity: 'Trabajo Actual',
+    description: 'Sincronizacion de Relojes Biometricos.',
+    tags: ['PHP', 'PostgreSQL', 'Node.js', 'IA'],
     icon: <Users className="w-6 h-6" />,
     // Sin repoUrl para evitar que sea clickeable
   },
   {
     role: 'Ser Electrónica',
     entity: 'GitHub Project - Electrónica',
-    description: 'Automatización de inventario y ERP.',
+    description: 'SER Electrónica es un sitio web institucional e informativo desarrollado para brindar presencia digital a la empresa y facilitar la visualización de su catálogo de productos. El sistema está diseñado bajo un enfoque responsive, garantizando una correcta visualización tanto en dispositivos móviles como en computadoras.',
     tags: ['Automatización', 'ERP', 'Inventario'],
     icon: <Cpu className="w-6 h-6" />,
     repoUrl: 'https://github.com/GuevaraMansuino/SerElectronica'

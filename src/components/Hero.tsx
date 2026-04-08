@@ -6,7 +6,11 @@ import { MessageCircle, Mail } from 'lucide-react';
 
 const ROLES = ["Desarrollador Web", "Programador", "Estudiante de UTN", "Creador"];
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenServices: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenServices }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [roleIndex, setRoleIndex] = useState(0);
   const [showContact, setShowContact] = useState(false);
@@ -69,7 +73,7 @@ export const Hero: React.FC = () => {
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-t from-bg to-transparent" />
       </div>
 
-      <Navbar />
+      <Navbar onOpenServices={onOpenServices} />
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl pt-20">
         <p className="blur-in text-xs text-muted uppercase tracking-[0.3em] mb-8">

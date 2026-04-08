@@ -4,11 +4,21 @@ import { cn } from '../lib/utils';
 
 const NAV_LINKS = ["Inicio", "Proyectos", "Servicios"];
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenServices: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenServices }) => {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState(NAV_LINKS[0]);
   const handleNav = (link: string) => {
     setActive(link);
+
+    if (link === "Servicios") {
+      onOpenServices();
+      return;
+    }
+
     const element = document.getElementById(link.toLowerCase());
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

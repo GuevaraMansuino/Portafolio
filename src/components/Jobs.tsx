@@ -35,7 +35,7 @@ const FunkoModel = () => {
       <primitive
         object={scene}
         scale={4.0}
-        position={[-1.2, -1.2, 0]}
+        position={[-0.8, -1.2, 0]}
         rotation={[0, -Math.PI / 4, 0]}
       />
     </Float>
@@ -136,12 +136,12 @@ export const Jobs: React.FC = () => {
 
   return (
     <>
-      <section ref={sectionRef} className="bg-bg text-text-primary w-full h-screen relative z-10 overflow-hidden" id="proyectos">
+      <section ref={sectionRef} className="bg-bg text-text-primary w-full h-screen relative z-10 overflow-visible" id="proyectos">
         {/* Contenedor central a 2 columnas fijas */}
         <div className="max-w-[1300px] h-full mx-auto px-6 md:px-10 lg:px-16 flex flex-col md:flex-row items-center relative">
           
           {/* COLUMNA IZQUIERDA: 3D MODEL COMPLETAMENTE ESTÁTICO */}
-          <div className="w-full md:w-1/2 h-[40vh] md:h-full flex items-center justify-center relative">
+          <div className="w-full md:w-1/2 h-[40vh] md:h-full flex items-center justify-center relative z-20 overflow-visible">
             <div className="absolute top-10 left-0 md:top-24 z-10 w-full pointer-events-none">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-8 h-px bg-[#0C1A2B]" />
@@ -152,7 +152,7 @@ export const Jobs: React.FC = () => {
               </h2>
             </div>
 
-            <div className="w-full h-full relative cursor-grab active:cursor-grabbing">
+            <div className="w-full h-full relative cursor-grab active:cursor-grabbing translate-x-8">
               <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
@@ -167,8 +167,8 @@ export const Jobs: React.FC = () => {
           </div>
 
           {/* COLUMNA DERECHA: STACKED CARDS EN POSITION ABSOLUTE */}
-          <div className="w-full md:w-1/2 h-[60vh] md:h-full relative flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-[480px] h-[400px]">
+          <div className="w-full md:w-1/2 h-[60vh] md:h-full relative z-10 flex items-center justify-center lg:justify-end">
+            <div className="relative w-full max-w-[480px] h-[400px] md:-translate-x-2 lg:-translate-x-4">
                {PROJECTS.map((proj, idx) => (
                  <div 
                    key={idx} 

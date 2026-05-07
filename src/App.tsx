@@ -14,9 +14,9 @@ function App() {
   const [isServicesModalOpen, setIsServicesModalOpen] = useState(false);
 
   return (
-    <div className="bg-bg min-h-screen text-text-primary selection:bg-text-primary selection:text-bg">
+    <div className="bg-bg min-h-screen max-w-full overflow-x-clip text-text-primary selection:bg-text-primary selection:text-bg">
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-      <main className="relative">
+      <main className="relative w-full max-w-full overflow-x-clip">
         <Hero onOpenServices={() => setIsServicesModalOpen(true)} />
         <Jobs />
         {/*<SelectedWorks />*/}

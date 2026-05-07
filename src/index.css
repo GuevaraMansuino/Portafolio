@@ -39,6 +39,12 @@
 }
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   :root {
     --bg: 0 0% 4%;
     --surface: 0 0% 8%;
@@ -48,11 +54,29 @@
     --accent: 0 0% 96%;
   }
 
-  /* Reset some basic margins if not covered */
   body, html {
     margin: 0;
     padding: 0;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: clip;
+  }
+
+  img,
+  svg,
+  canvas,
+  video {
+    max-width: 100%;
   }
 }
 

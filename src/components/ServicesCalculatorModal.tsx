@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Check, MessageCircle, X } from 'lucide-react';
 
 type ServiceType = 'design' | 'development' | 'both';
@@ -19,14 +19,14 @@ const SERVICE_PRICING: Record<ServiceType, { base: number; perPage: number }> = 
 const WHATSAPP_NUMBER = '5492616648128';
 
 const SERVICE_TYPE_LABELS: Record<ServiceType, string> = {
-  design: 'Solo Diseno',
+  design: 'Solo Diseño',
   development: 'Solo Desarrollo',
-  both: 'Diseno + Desarrollo',
+  both: 'Diseño + Desarrollo',
 };
 
 const TIMELINE_LABELS: Record<TimelineType, string> = {
-  rush: 'En 7 Dias',
-  fast: 'En 14 Dias',
+  rush: 'En 7 Días',
+  fast: 'En 14 Días',
   normal: 'Velocidad Normal',
 };
 
@@ -99,18 +99,18 @@ export const ServicesCalculatorModal: React.FC<ServicesCalculatorModalProps> = (
 
   const whatsappMessage = useMemo(() => {
     return [
-      `Hola ${brandName}, me interesa saber sobre los costos para una pagina web.`,
+      `Hola ${brandName}, me interesa saber sobre los costos para una página web.`,
       '',
-      'Complete la calculadora con estos datos:',
+      'Completé la calculadora con estos datos:',
       `- Servicio: ${SERVICE_TYPE_LABELS[serviceType]}`,
-      `- Paginas: ${pages}`,
-      `- Ayuda con contenido: ${needContent ? 'Si' : 'No'}`,
-      `- SEO: ${needSEO ? 'Si' : 'No'}`,
+      `- Páginas: ${pages}`,
+      `- Ayuda con contenido: ${needContent ? 'Sí' : 'No'}`,
+      `- SEO: ${needSEO ? 'Sí' : 'No'}`,
       `- Entrega: ${TIMELINE_LABELS[timeline]}`,
       '',
       'Resultados presupuestados:',
       `- Con ${brandName}: ${formatPrice(estimatedPrice)}`,
-      `- Agencia tipica: ${formatPrice(agencyCost)}`,
+      `- Agencia típica: ${formatPrice(agencyCost)}`,
       `- Freelancer regular: ${formatPrice(freelancerCost)}`,
       '',
       'Quiero avanzar con este proyecto. Quedo atento.',
@@ -189,7 +189,7 @@ export const ServicesCalculatorModal: React.FC<ServicesCalculatorModalProps> = (
               <X className="h-5 w-5" />
             </button>
             <h2 className="max-w-3xl text-3xl font-normal text-white md:text-4xl">
-              Obten un sitio web premium dentro de tu presupuesto
+              Obtén un sitio web premium dentro de tu presupuesto
             </h2>
           </header>
 
@@ -197,12 +197,12 @@ export const ServicesCalculatorModal: React.FC<ServicesCalculatorModalProps> = (
             <div className="bg-black p-8 lg:p-12">
               <div className="divide-y divide-white/10">
                 <section className="pb-6">
-                  <h3 className="mb-4 text-lg text-white">Que tipo de servicio necesitas?</h3>
+                  <h3 className="mb-4 text-lg text-white">¿Qué tipo de servicio necesitas?</h3>
                   <div className="space-y-3">
                     {[
-                      { label: 'Solo Diseno', value: 'design' as const },
+                      { label: 'Solo Diseño', value: 'design' as const },
                       { label: 'Solo Desarrollo', value: 'development' as const },
-                      { label: 'Diseno + Desarrollo', value: 'both' as const },
+                      { label: 'Diseño + Desarrollo', value: 'both' as const },
                     ].map((option) => {
                       const isActive = serviceType === option.value;
                       return (
@@ -231,7 +231,7 @@ export const ServicesCalculatorModal: React.FC<ServicesCalculatorModalProps> = (
                 </section>
 
                 <section className="py-6">
-                  <h3 className="mb-4 text-lg text-white">Cantidad de paginas: {pages}</h3>
+                  <h3 className="mb-4 text-lg text-white">Cantidad de páginas: {pages}</h3>
                   <input
                     type="range"
                     min={1}
@@ -256,13 +256,13 @@ export const ServicesCalculatorModal: React.FC<ServicesCalculatorModalProps> = (
                     {[
                       {
                         label: 'Necesito ayuda con el contenido',
-                        priceLabel: '+$15/pagina',
+                        priceLabel: '+$15/página',
                         checked: needContent,
                         onToggle: () => setNeedContent((current) => !current),
                       },
                       {
                         label: 'Quiero optimizar mi web para SEO',
-                        priceLabel: '+$20/pagina',
+                        priceLabel: '+$20/página',
                         checked: needSEO,
                         onToggle: () => setNeedSEO((current) => !current),
                       },
@@ -290,11 +290,11 @@ export const ServicesCalculatorModal: React.FC<ServicesCalculatorModalProps> = (
                 </section>
 
                 <section className="pt-6">
-                  <h3 className="mb-4 text-lg text-white">Que tan rapido lo necesitas?</h3>
+                  <h3 className="mb-4 text-lg text-white">¿Qué tan rápido lo necesitas?</h3>
                   <div className="space-y-3">
                     {[
-                      { label: 'En 7 Dias', value: 'rush' as const, extra: '+$30/pagina' },
-                      { label: 'En 14 Dias', value: 'fast' as const, extra: '+$10/pagina' },
+                      { label: 'En 7 Días', value: 'rush' as const, extra: '+$30/página' },
+                      { label: 'En 14 Días', value: 'fast' as const, extra: '+$10/página' },
                       { label: 'Velocidad Normal', value: 'normal' as const, extra: 'Sin costo extra' },
                     ].map((option) => {
                       const isActive = timeline === option.value;
@@ -337,7 +337,7 @@ export const ServicesCalculatorModal: React.FC<ServicesCalculatorModalProps> = (
 
               <div className="mt-8 space-y-4">
                 <article className="space-y-3 rounded-2xl border border-white/10 bg-black/40 p-6">
-                  <p className="text-sm text-white/70">Una agencia tipica cobra al menos</p>
+                  <p className="text-sm text-white/70">Una agencia típica cobra al menos</p>
                   <p className="text-4xl text-white">{formatPrice(agencyCost)}</p>
                   <p className="text-sm text-white/60">+ Mucho tiempo extra y costos ocultos</p>
                 </article>
@@ -356,7 +356,7 @@ export const ServicesCalculatorModal: React.FC<ServicesCalculatorModalProps> = (
 
                 <div className="space-y-4 rounded-2xl border border-white/20 bg-black/30 p-6">
                   <p className="text-sm text-white/85">
-                    Si a tu negocio le falta una pagina web o estas buscando este tipo de servicios, contactame por
+                    Si a tu negocio le falta una página web o estás buscando este tipo de servicios, contáctame por
                     WhatsApp y lo vemos juntos.
                   </p>
                   <a

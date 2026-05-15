@@ -131,4 +131,11 @@
     border: 2px solid #0C1A2B;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
   }
+
+  .mask-mobile {
+    @media (max-width: 1023px) {
+      -webkit-mask-image: linear-gradient(black 80%, transparent);
+      mask-image: linear-gradient(black 80%, transparent);
+    }
+  }
 }

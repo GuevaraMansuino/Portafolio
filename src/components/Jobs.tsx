@@ -183,7 +183,7 @@ export const Jobs: React.FC = () => {
               </h2>
             </div>
 
-            <div className="block w-full flex-1 min-h-[150px] sm:min-h-[190px] lg:h-full relative -mt-10 sm:-mt-12 lg:mt-0 cursor-grab active:cursor-grabbing scale-115 sm:scale-110 lg:scale-100 lg:translate-x-8 origin-center overflow-visible mx-auto">
+            <div className="block w-full flex-1 min-h-[150px] sm:min-h-[190px] lg:h-full relative -mt-10 sm:-mt-12 lg:mt-0 cursor-grab active:cursor-grabbing scale-115 sm:scale-110 lg:scale-100 lg:translate-x-8 origin-center overflow-visible mx-auto mask-mobile">
               <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[10, 10, 5]} intensity={2} color="#ffffff" />
